@@ -10,6 +10,7 @@ const inquirer = require('inquirer');
           choices: [
             "Add new contact",
             "Date and Time",
+            "Remind me",
             "Exit"
           ]
         }
@@ -24,11 +25,14 @@ const inquirer = require('inquirer');
          case "Add new contact":
            this.addContact();
            break;
-         case "Exit":
-           this.exit();
+         case 'Remind me':
+           this.remindMe();
+           break;
          case "Date and Time":
            this.getDate();
            break;
+         case "Exit":
+           this.exit();
          default:
            console.log("Invalid input");
            this.main();
@@ -58,5 +62,15 @@ const inquirer = require('inquirer');
     const dateTime = new Date();
     console.log(dateTime.toString());
     this.main();
+   }
+
+   getContactCount() {
+    return this.contacts.length;
+   }
+
+   remindMe() {
+    console.log('Learning is a life-long pursuit');
+    this.main();
+    return 'Learning is a life-long pursuit';
    }
 }
