@@ -92,11 +92,11 @@ module.exports = class ContactController {
       let currentContact = contacts[mid];
 
 // #2
-      if(currentContact.name > target){ //target is before element at mid, eliminate upper bound
+      if(currentContact.name > target){ //target is before element at mid, eliminate upper bound.
         max = mid - 1;
-      } else if(currentContact.name < target){ //target is after element at mid, eliminate lower bound
+      } else if(currentContact.name < target){ //target is after element at mid, eliminate lower bound.
         min = mid - 1;
-      } else { //element found, return it
+      } else { //element found, return it.
         return contacts[mid];
       }
     }
